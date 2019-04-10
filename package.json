@@ -14,7 +14,8 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "mint-ui": "^2.2.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -61,7 +62,9 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
   },
   "engines": {
     "node": ">= 6.0.0",

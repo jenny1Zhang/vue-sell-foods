@@ -10,29 +10,58 @@ import MyAddress from '@/components/component/My_address'
 import OrderDetails from '@/components/component/Order_details'
 import ShopDetails from '@/components/component/Shop_details'
 
+import store from '@/vuex/store'
+import { Toast } from 'mint-ui'
+
 Vue.use(Router)
 
-export default new Router({
+const routes = [
+  {
+    path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/Full',
+    name: 'Full',
+    component: Full,
+    children: [
+      { path: '/dashboard', name: 'Dashboard', meta: { requireAuth: true, }, component: Dashboard },
+      { path: '/Orders', name: 'Orders', component: Orders },
+      { path: '/Setting', name: 'Setting', component: Setting }
+    ]
+  },
+  { path: '/AccountInfo', name: 'AccountInfo', component: AccountInfo },
+  { path: '/MyAddress', name: 'MyAddress', component: MyAddress },
+  { path: '/OrderDetails/:orderId', name: 'OrderDetails', component: OrderDetails },
+  { path: '/ShopDetails/:shopId', name: 'ShopDetails', component: ShopDetails }
+]
+
+const router =  new Router({
   linkActiveClass: 'active',
-  routes: [
-    {
-      path: '/',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/Full',
-      name: 'Full',
-      component: Full,
-      children: [
-        { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-        { path: '/Orders', name: 'Orders', component: Orders },
-        { path: '/Setting', name: 'Setting', component: Setting }
-      ]
-    },
-    { path: '/AccountInfo', name: 'AccountInfo', component: AccountInfo },
-    { path: '/MyAddress', name: 'MyAddress', component: MyAddress },
-    { path: '/OrderDetails/:orderId', name: 'OrderDetails', component: OrderDetails },
-    { path: '/ShopDetails/:shopId', name: 'ShopDetails', component: ShopDetails }
-  ]
+  routes
 })
+
+router.beforeEach((to,from,next) => {
+  if (to.matched.some(r => r.meta.requireAuth)) {
+        if (store.state.isLogin) {
+            next();
+        }
+        else {
+          Toast({
+            message: '请先登录',
+            position: 'top',
+            duration: 2500
+          });
+          next({
+              path: '/',
+              // query: {redirect: to.fullPath}
+          })
+        }
+    }
+    else {
+        next();
+    }
+})
+
+export default router;

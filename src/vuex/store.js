@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  isLogin: false,
   orderLists: [
     {
       id: '0005',
@@ -3263,6 +3264,15 @@ const state = {
   }
 }
 
+const mutation = {
+  loginFuc: (state, data) => {
+    // console.log(data)
+    state.isLogin=true
+  },
+  logoutFuc: state => state.isLogin=false
+}
+
 export default new Vuex.Store({
-  state
+  state,
+  mutations: mutation
 })

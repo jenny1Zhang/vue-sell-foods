@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import store from "@/vuex/store"
 export default {
   name: 'Login',
   data () {
@@ -34,6 +35,7 @@ export default {
   methods: {
     toLogin: function () {
       // console.log(this.username, this.password)
+      store.commit('loginFuc','login')
       localStorage.username = this.username
       localStorage.phone = this.phone
       this.$router.push({ path: '/Dashboard' })

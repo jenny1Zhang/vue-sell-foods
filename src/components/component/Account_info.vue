@@ -29,6 +29,7 @@
 
 <script>
 import Heads from '@/components/common/head'
+import store from "@/vuex/store"
 export default {
   name: 'AccountInfo',
   data () {
@@ -43,6 +44,7 @@ export default {
   },
   methods: {
     logout () {
+      store.commit('logoutFuc')
       this.$router.push({ path: '/' })
     }
   }

@@ -65,17 +65,25 @@
 <script>
 import store from '@/vuex/store'
 import { mapState } from 'vuex'
+import { getnews } from '@/service/getData'
 export default {
   name: 'Dashboard',
   data () {
     return {
+      page: 1,
       shopData: {}
     }
   },
   computed: {
     ...mapState(['shopLists'])
   },
+  created(){
+    // console.log(1)
+    this.init();
+  },
   mounted: function() {
+    // console.log(this.$store.state.shopLists)
+    // console.log(store.state.shopLists)
     this.shopData={
       list: this.shopLists
     }
@@ -84,6 +92,12 @@ export default {
    })
   },
   methods: {
+    async init(){
+      let response = await getnews('TY43,FOCUSTY43,TYTOPIC',this.page++,'5.4.0');
+      response.data.forEach((obj,index) => {
+        // console.log(index,obj)
+      })
+    },
     setScore (score) {
       return score * 20 + '%'
     },
@@ -312,6 +326,7 @@ export default {
         width:30%;
         text-align: right;
     }
+
 
 
 </style>
