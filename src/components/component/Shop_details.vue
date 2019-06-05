@@ -28,51 +28,53 @@
           <div :class="{active: isOption===0}">
               <div class="shop_adv"><img src="../../assets/img/shop_adv.png" /></div>
               <div class="shop_recom">
-                  <p>商家推荐</p>
-                  <ul>
-                      <li class="recom">
-                          <div><img src="../../assets/img/shop_food1.png" /></div>
-                          <div>吉味拼饭</div>
-                          <div>月售507 好评95%</div>
-                          <div>
-                              <div>¥38.5</div>
-                              <div><span>+</span></div>
-                          </div>
-                      </li>
-                      <li class="recom">
-                          <div><img src="../../assets/img/shop_food2.png" /></div>
-                          <div>吉味拼饭</div>
-                          <div>月售507 好评95%</div>
-                          <div>
-                              <div>¥38.5</div>
-                              <div><span>+</span></div>
-                          </div>
-                      </li><li class="recom">
-                          <div><img src="../../assets/img/shop_food1.png" /></div>
-                          <div>吉味拼饭</div>
-                          <div>月售507 好评95%</div>
-                          <div>
-                              <div>¥38.5</div>
-                              <div><span>+</span></div>
-                          </div>
-                      </li><li class="recom">
-                          <div><img src="../../assets/img/shop_food2.png" /></div>
-                          <div>吉味拼饭</div>
-                          <div>月售507好评95%</div>
-                          <div>
-                              <div>¥38.5</div>
-                              <div><span>+</span></div>
-                          </div>
-                      </li><li class="recom">
-                          <div><img src="../../assets/img/shop_food1.png" /></div>
-                          <div>吉味拼饭</div>
-                          <div>月售507 好评95%</div>
-                          <div>
-                              <div>¥38.5</div>
-                              <div><span>+</span></div>
-                          </div>
-                      </li>
-                  </ul>
+                  <div class="shop_recom_title">商家推荐</div>
+                  <div class="shop_scrollbox">
+                        <ul>
+                            <li class="recom">
+                                <div><img src="../../assets/img/shop_food1.png" /></div>
+                                <div>吉味拼饭</div>
+                                <div>月售507 好评95%</div>
+                                <div>
+                                    <div>¥38.5</div>
+                                    <div><span>+</span></div>
+                                </div>
+                            </li>
+                            <li class="recom">
+                                <div><img src="../../assets/img/shop_food2.png" /></div>
+                                <div>吉味拼饭</div>
+                                <div>月售507 好评95%</div>
+                                <div>
+                                    <div>¥38.5</div>
+                                    <div><span>+</span></div>
+                                </div>
+                            </li><li class="recom">
+                                <div><img src="../../assets/img/shop_food1.png" /></div>
+                                <div>吉味拼饭</div>
+                                <div>月售507 好评95%</div>
+                                <div>
+                                    <div>¥38.5</div>
+                                    <div><span>+</span></div>
+                                </div>
+                            </li><li class="recom">
+                                <div><img src="../../assets/img/shop_food2.png" /></div>
+                                <div>吉味拼饭</div>
+                                <div>月售507好评95%</div>
+                                <div>
+                                    <div>¥38.5</div>
+                                    <div><span>+</span></div>
+                                </div>
+                            </li><li class="recom">
+                                <div><img src="../../assets/img/shop_food1.png" /></div>
+                                <div>吉味拼饭</div>
+                                <div>月售507 好评95%</div>
+                                <div>
+                                    <div>¥38.5</div>
+                                    <div><span>+</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                  </div>
               </div>
               <shopComponent :dataList="shopdetail.order.foodList" v-on:getFood="getComFood"></shopComponent>
           </div>
@@ -334,13 +336,21 @@ export default {
     }
     .shop_options_box .shop_recom{
         width: 100%;
+        /* overflow-x: auto;
+        overflow-y: hidden; */
+    }
+    .shop_recom>.shop_recom_title{
+        padding: 10px 15px 7px;
+        text-align: left;
+        color: black;
+    }
+    .shop_options_box .shop_recom .shop_scrollbox{
+        width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
     }
-    .shop_recom>p{
-        padding: 0 15px;
-        text-align: left;
-        color: black;
+    .shop_options_box .shop_recom .shop_scrollbox::-webkit-scrollbar{
+        display: none;
     }
     .shop_options_box .shop_recom ul{
         white-space: nowrap;

@@ -1,7 +1,7 @@
 <template>
-  <div class="headbox">
-     <div class="back" v-if="isback" @click="goBack">&lt;</div>
-     <div class="headtitle">{{titleName}}</div>
+  <div id="headbox">
+     <div id="back" v-if="isback" @click="goBack">&lt;<span>返回</span></div>
+     <div id="headtitle">{{titleName}}</div>
   </div>
 </template>
 
@@ -26,14 +26,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .headbox{
+    #headbox{
         width:100%;
         height:50px;
         position: relative;
         background:white;
         box-sizing: border-box;
+        padding:0;
     }
-    .back{
+    #back{
         height:100%;
         line-height: 50px;
         position:absolute;
@@ -42,7 +43,11 @@ export default {
         font-size:22px;
         color: #0b8de3;
     }
-    .headtitle{
+    #back>span{
+      font-size: 16px;
+      margin-left: 3px;
+    }
+    #headtitle{
         width:100%;
         height:100%;
         line-height: 50px;

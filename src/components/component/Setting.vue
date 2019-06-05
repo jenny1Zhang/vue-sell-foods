@@ -158,7 +158,7 @@ export default {
         text-align: center;
         float:left;
         font-size:14px;
-        padding: 12px 0;
+        padding: 7px 0;
     }
     .userpacket .red-packet{
         border-right:1px solid #eee;
@@ -176,7 +176,7 @@ export default {
     }
 
     .advertisement{
-        padding:20px 0 0;
+        padding:16px 0 0;
         background:#eee;
     }
     .advertisement>div{
@@ -200,7 +200,7 @@ export default {
     }
 
     .operation{
-        padding: 20px 0 2px;
+        padding: 16px 0 2px;
         background:#eee;
     }
     .operation ul{

@@ -59,7 +59,7 @@ export default {
         background: #f7f7f7;
     }
     .account_info>div{
-        font-size: 14px;
+        font-size: 15px;
         background: white;
         padding:7px 10px;
         border-bottom: 1px solid #f7f7f7;

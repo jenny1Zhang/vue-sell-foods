@@ -38,7 +38,16 @@ export default {
       store.commit('loginFuc','login')
       localStorage.username = this.username
       localStorage.phone = this.phone
-      this.$router.push({ path: '/Dashboard' })
+      if(this.username && this.password && this.phone){
+          if(/^1[3|4|5|8][0-9]\d{8}$/.test(this.phone)){
+              this.$router.push({ path: '/Dashboard' })
+          }else{
+              console.log("输入的手机号格式不对")
+          }
+          
+      }else{
+          console.log("请输入完整登录信息")
+      }
     }
   }
 }
