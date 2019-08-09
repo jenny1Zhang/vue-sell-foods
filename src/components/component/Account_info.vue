@@ -45,6 +45,7 @@ export default {
   methods: {
     logout () {
       store.commit('logoutFuc')
+      localStorage.isLogin = false
       this.$router.push({ path: '/' })
     }
   }

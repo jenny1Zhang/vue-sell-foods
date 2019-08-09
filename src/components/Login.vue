@@ -36,10 +36,11 @@ export default {
     toLogin: function () {
       // console.log(this.username, this.password)
       store.commit('loginFuc','login')
-      localStorage.username = this.username
-      localStorage.phone = this.phone
       if(this.username && this.password && this.phone){
           if(/^1[3|4|5|8][0-9]\d{8}$/.test(this.phone)){
+              localStorage.username = this.username
+              localStorage.phone = this.phone
+              localStorage.isLogin = true
               this.$router.push({ path: '/Dashboard' })
           }else{
               console.log("输入的手机号格式不对")

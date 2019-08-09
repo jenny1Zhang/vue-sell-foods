@@ -44,7 +44,7 @@ const router =  new Router({
 
 router.beforeEach((to,from,next) => {
   if (to.matched.some(r => r.meta.requireAuth)) {
-        if (store.state.isLogin) {
+        if (localStorage.isLogin) {
             next();
         }
         else {

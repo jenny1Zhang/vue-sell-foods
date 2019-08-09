@@ -3266,7 +3266,6 @@ const state = {
 
 const mutation = {
   loginFuc: (state, data) => {
-    // console.log(data)
     state.isLogin=true
   },
   logoutFuc: state => state.isLogin=false
