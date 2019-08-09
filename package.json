@@ -74,5 +74,12 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "keywords": [
+    "vue",
+    "vue-router",
+    "vuex",
+    "axios",
+    "mint-ui"
   ]
 }
