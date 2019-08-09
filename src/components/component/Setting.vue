@@ -9,7 +9,7 @@
               <div class="username">{{userName}}</div>
               <div class="usernum">{{phone}}</div>
           </div>
-          <div class="userright">&gt;</div>
+          <div class="userright"><i class="icon iconfont icon-jiantou2"></i></div>
       </div>
       <div class="userpacket">
           <div class="red-packet">
@@ -24,7 +24,7 @@
       <div class="advertisement">
           <div>
               <div>成为超级会员</div>
-              <div>立送最高20元无门槛红包 &gt;</div>
+              <div>立送最高20元无门槛红包 <i class="icon iconfont icon-jiantou3"></i></div>
           </div>
       </div>
       <div class="operation">
@@ -34,28 +34,28 @@
                       <i class="icon iconfont icon-dizhi"></i>
                       <span>我的地址</span>
                   </div>
-                  <div class="op-right">&gt;</div>
+                  <div class="op-right"><i class="icon iconfont icon-jiantou3"></i></div>
               </li>
               <li>
                   <div>
                       <i class="icon iconfont icon-shouye"></i>
                       <span>金币商城</span>
                   </div>
-                  <div class="op-right">&gt;</div>
+                  <div class="op-right"><i class="icon iconfont icon-jiantou3"></i></div>
               </li>
               <li>
                   <div>
                       <i class="icon iconfont icon-kefu"></i>
                       <span>我的客服</span>
                   </div>
-                  <div class="op-right">&gt;</div>
+                  <div class="op-right"><i class="icon iconfont icon-jiantou3"></i></div>
               </li>
               <li>
                   <div>
                       <i class="icon iconfont icon-bianmaguize"></i>
                       <span>规则中心</span>
                   </div>
-                  <div class="op-right">&gt;</div>
+                  <div class="op-right"><i class="icon iconfont icon-jiantou3"></i></div>
               </li>
           </ul>
       </div>

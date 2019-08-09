@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-      <form>
+      <form @keyup.enter="toLogin">
           <legend class="title">用户登陆</legend>
           <div class="form-group">
               <label>用户名:</label>
@@ -44,7 +44,7 @@ export default {
           }else{
               console.log("输入的手机号格式不对")
           }
-          
+
       }else{
           console.log("请输入完整登录信息")
       }

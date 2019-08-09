@@ -1,6 +1,6 @@
 <template>
   <div id="headbox">
-     <div id="back" v-if="isback" @click="goBack">&lt;<span>返回</span></div>
+     <div id="back" v-if="isback" @click="goBack"><i class="icon iconfont icon-xiazai6"></i><span>返回</span></div>
      <div id="headtitle">{{titleName}}</div>
   </div>
 </template>
